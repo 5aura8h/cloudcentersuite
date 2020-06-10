@@ -25,7 +25,7 @@ echo "[default]" | sudo tee --append /root/.aws/credentials
 echo "aws_access_key_id=$aws_access_key_id" | sudo tee --append /root/.aws/credentials
 echo "aws_secret_access_key=$aws_secret_access_key" | sudo tee --append /root/.aws/credentials
 
-cd /var/www/wordpress
+cd /var/www/
 
 sudo zip -r ~/wordpressbkup.zip *
 
