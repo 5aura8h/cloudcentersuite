@@ -14,6 +14,7 @@ env
 
 
  #Install S3
+sudo yum install -y wget
 sudo wget -N "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
 sudo unzip -o awscli-bundle.zip
 sudo ./awscli-bundle/install -b /root/bin/aws
