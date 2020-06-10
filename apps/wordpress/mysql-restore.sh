@@ -20,6 +20,7 @@ fi
  #Install S3
 cd /tmp/
 sudo curl https://s3.amazonaws.com/aws-cli/awscli-bundle-1.16.188.zip -o awscli-bundle.zip
+sudo yum install unzip -y
 sudo unzip -o awscli-bundle.zip
 sudo /tmp/awscli-bundle/install -b /root/bin/aws
 
