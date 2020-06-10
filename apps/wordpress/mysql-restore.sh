@@ -21,7 +21,7 @@ fi
 cd /tmp/
 sudo curl https://s3.amazonaws.com/aws-cli/awscli-bundle-1.16.188.zip -o awscli-bundle.zip
 sudo unzip -o awscli-bundle.zip
-sudo ./awscli-bundle/install -b /root/bin/aws
+sudo /tmp/awscli-bundle/install -b /root/bin/aws
 
 #Configure S3
 sudo mkdir -p /root/.aws
