@@ -18,7 +18,8 @@ else
 fi
 
  #Install S3
-sudo wget -N "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
+cd /tmp/
+sudo curl https://s3.amazonaws.com/aws-cli/awscli-bundle-1.16.188.zip -o awscli-bundle.zip
 sudo unzip -o awscli-bundle.zip
 sudo ./awscli-bundle/install -b /root/bin/aws
 
@@ -36,6 +37,6 @@ sudo /root/bin/aws s3 cp s3://$s3path/$migrateFromDepId/dbbak.sql dbbak.sql
 sudo su -c "mysql -u root -pwelcome2cliqr < dbbak.sql"
 
 #Use simple DB commands to replace old front-end IP with new front-end IP in database
-sudo mysql -u root -pwelcome2cliqr -e "update wordpress.wp_options set option_value = 'http://${CliqrTier_haproxy_2_PUBLIC_IP}/wordpress' where option_name = 'siteurl';"
-sudo mysql -u root -pwelcome2cliqr -e "update wordpress.wp_options set option_value = 'http://${CliqrTier_haproxy_2_PUBLIC_IP}/wordpress' where option_name = 'home';"
+sudo mysql -u root -pwelcome2cliqr -e "update wpdb.wp_options set option_value = 'http://${CliqrTier_apache2_1_PUBLIC_IP}/wordpress' where option_name = 'siteurl';"
+sudo mysql -u root -pwelcome2cliqr -e "update wpdb.wp_options set option_value = 'http://${CliqrTier_apache2_1_PUBLIC_IP}/wordpress' where option_name = 'home';"
 sudo mysql -u root -pwelcome2cliqr -e "FLUSH PRIVILEGES;"
