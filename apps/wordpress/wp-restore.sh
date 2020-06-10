@@ -31,6 +31,6 @@ sudo unzip -o ~/wordpressbkup.zip -d /var/www/
 sudo cp /tmp/wp-config.php /var/www/
 sudo chown -R apache:apache /var/www/
 
-sudo rm ~/wordpressbkup.zip
+#sudo rm ~/wordpressbkup.zip
 
 #sudo /root/bin/aws s3 rm --recursive s3://$s3path/$migrateFromDepId
