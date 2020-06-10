@@ -38,6 +38,6 @@ sudo /root/bin/aws s3 cp s3://$s3path/$migrateFromDepId/dbbak.sql dbbak.sql
 sudo su -c "mysql -u root -pwelcome2cliqr < dbbak.sql"
 
 #Use simple DB commands to replace old front-end IP with new front-end IP in database
-sudo mysql -u root -pwelcome2cliqr -e "update wpdb.wp_options set option_value = 'http://${CliqrTier_apache2_1_PUBLIC_IP}/wordpress' where option_name = 'siteurl';"
-sudo mysql -u root -pwelcome2cliqr -e "update wpdb.wp_options set option_value = 'http://${CliqrTier_apache2_1_PUBLIC_IP}/wordpress' where option_name = 'home';"
+sudo mysql -u root -pwelcome2cliqr -e "update wpdb.wp_options set option_value = 'http://${CliqrTier_apache2_1_PUBLIC_IP}' where option_name = 'siteurl';"
+sudo mysql -u root -pwelcome2cliqr -e "update wpdb.wp_options set option_value = 'http://${CliqrTier_apache2_1_PUBLIC_IP}' where option_name = 'home';"
 sudo mysql -u root -pwelcome2cliqr -e "FLUSH PRIVILEGES;"
